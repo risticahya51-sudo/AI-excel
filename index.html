@@ -48,13 +48,11 @@ tailwind.config = {
     overflow-x: hidden;
   }
 
-  /* Scrollbar */
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--fg-muted); }
 
-  /* Background noise */
   body::before {
     content: '';
     position: fixed;
@@ -72,7 +70,6 @@ tailwind.config = {
     border: 1px solid var(--border);
   }
 
-  /* Upload zone animasi */
   .upload-zone {
     border: 2px dashed var(--border-light);
     transition: all 0.3s ease;
@@ -94,7 +91,6 @@ tailwind.config = {
     box-shadow: 0 0 30px var(--accent-glow);
   }
 
-  /* Pulse dot */
   .pulse-dot {
     width: 8px; height: 8px;
     background: var(--accent);
@@ -106,7 +102,6 @@ tailwind.config = {
     50% { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
   }
 
-  /* Spinner */
   .spinner {
     width: 24px; height: 24px;
     border: 3px solid var(--border);
@@ -116,7 +111,6 @@ tailwind.config = {
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* Chart card */
   .chart-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -131,7 +125,6 @@ tailwind.config = {
     transform: translateY(-2px);
   }
 
-  /* Stat card */
   .stat-card {
     background: linear-gradient(135deg, var(--card), var(--card-hover));
     border: 1px solid var(--border);
@@ -153,7 +146,6 @@ tailwind.config = {
   }
   .stat-card:hover::after { opacity: 1; }
 
-  /* Chat bubble */
   .chat-ai {
     background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.03));
     border: 1px solid rgba(16,185,129,0.15);
@@ -165,7 +157,6 @@ tailwind.config = {
     border-radius: 12px 12px 4px 12px;
   }
 
-  /* Toast */
   .toast {
     position: fixed;
     bottom: 24px;
@@ -183,7 +174,6 @@ tailwind.config = {
   .toast.error { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); color: #fca5a5; }
   .toast.info { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: #fcd34d; }
 
-  /* Modal */
   .modal-overlay {
     position: fixed;
     inset: 0;
@@ -214,7 +204,6 @@ tailwind.config = {
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Input */
   .input-field {
     background: var(--card);
     border: 1px solid var(--border);
@@ -229,10 +218,8 @@ tailwind.config = {
   }
   .input-field:focus { border-color: var(--accent); }
   .input-field::placeholder { color: var(--fg-muted); }
-
   textarea.input-field { resize: vertical; min-height: 80px; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
 
-  /* Button */
   .btn-primary {
     background: var(--accent);
     color: #000;
@@ -262,7 +249,6 @@ tailwind.config = {
   }
   .btn-ghost:hover { color: var(--fg); border-color: var(--border-light); background: var(--card); }
 
-  /* Data table */
   .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
   .data-table th {
     background: var(--card-hover);
@@ -289,11 +275,9 @@ tailwind.config = {
   }
   .data-table tr:hover td { color: var(--fg); background: rgba(255,255,255,0.02); }
 
-  /* Fade in animation */
   .fade-in { animation: fadeIn 0.5s ease forwards; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* Tab */
   .tab-btn {
     padding: 8px 18px;
     border-radius: 8px;
@@ -309,7 +293,6 @@ tailwind.config = {
   .tab-btn:hover { color: var(--fg); background: var(--card); }
   .tab-btn.active { color: var(--accent); background: var(--accent-glow); }
 
-  /* Floating particles */
   .particle {
     position: fixed;
     width: 2px; height: 2px;
@@ -327,7 +310,6 @@ tailwind.config = {
     }
   }
 
-  /* Select styling */
   select.input-field {
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
@@ -339,13 +321,9 @@ tailwind.config = {
 </head>
 <body>
 
-<!-- Floating particles -->
 <div id="particles" aria-hidden="true"></div>
-
-<!-- Toast -->
 <div id="toast" class="toast" role="alert"></div>
 
-<!-- Navbar -->
 <nav class="fixed top-0 left-0 right-0 z-50 glass" style="border-top:none;border-left:none;border-right:none;">
   <div class="max-w-[1400px] mx-auto px-6 h-14 flex items-center justify-between">
     <div class="flex items-center gap-3">
@@ -368,9 +346,7 @@ tailwind.config = {
   </div>
 </nav>
 
-<!-- Main Content -->
 <main class="relative z-10 pt-14">
-  <!-- Upload Section -->
   <section id="uploadSection" class="max-w-3xl mx-auto px-6 py-20">
     <div class="text-center mb-10 fade-in">
       <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4" style="line-height:1.1;">
@@ -413,7 +389,6 @@ tailwind.config = {
     </div>
   </section>
 
-  <!-- Loading Section -->
   <section id="loadingSection" class="hidden max-w-3xl mx-auto px-6 py-20 text-center">
     <div class="spinner mx-auto mb-6"></div>
     <p class="font-semibold text-lg mb-2" id="loadingTitle">Menganalisis data...</p>
@@ -423,9 +398,7 @@ tailwind.config = {
     </div>
   </section>
 
-  <!-- Dashboard Section -->
   <section id="dashboardSection" class="hidden">
-    <!-- Dashboard Header -->
     <div class="max-w-[1400px] mx-auto px-6 py-6">
       <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div>
@@ -434,7 +407,7 @@ tailwind.config = {
         </div>
         <div class="flex items-center gap-2">
           <div class="flex items-center gap-2 text-xs px-3 py-1.5 rounded-full" style="background:var(--accent-glow);border:1px solid rgba(16,185,129,0.2);">
-            <div class="pulse-dot"></div>
+            <div class="pulse-dot" id="statusDot"></div>
             <span style="color:var(--accent)" id="llmStatusText">LLM Terhubung</span>
           </div>
           <button onclick="resetApp()" class="btn-ghost text-xs">
@@ -443,7 +416,6 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Tabs -->
       <div class="flex gap-1 p-1 rounded-lg mb-6" style="background:var(--card);border:1px solid var(--border);display:inline-flex;">
         <button class="tab-btn active" data-tab="dashboard" onclick="switchTab('dashboard')">
           <i class="fas fa-chart-pie mr-1.5"></i> Dashboard
@@ -457,13 +429,9 @@ tailwind.config = {
       </div>
     </div>
 
-    <!-- Dashboard Tab -->
     <div id="tabDashboard" class="max-w-[1400px] mx-auto px-6 pb-12">
-      <!-- Stats Row -->
       <div id="statsRow" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6"></div>
-      <!-- Charts Grid -->
       <div id="chartsGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-6"></div>
-      <!-- AI Insight -->
       <div id="aiInsight" class="mt-6 chart-card hidden">
         <div class="flex items-center gap-2 mb-3">
           <i class="fas fa-brain text-sm" style="color:var(--accent2)"></i>
@@ -473,7 +441,6 @@ tailwind.config = {
       </div>
     </div>
 
-    <!-- Data Tab -->
     <div id="tabData" class="hidden max-w-[1400px] mx-auto px-6 pb-12">
       <div class="chart-card overflow-hidden">
         <div class="flex items-center justify-between mb-4">
@@ -489,7 +456,6 @@ tailwind.config = {
       </div>
     </div>
 
-    <!-- Chat Tab -->
     <div id="tabChat" class="hidden max-w-[1400px] mx-auto px-6 pb-12">
       <div class="chart-card" style="height:500px;display:flex;flex-direction:column;">
         <div class="flex items-center gap-2 mb-4 pb-4" style="border-bottom:1px solid var(--border)">
@@ -509,7 +475,6 @@ tailwind.config = {
   </section>
 </main>
 
-<!-- Settings Modal -->
 <div id="settingsModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Pengaturan LLM">
   <div class="modal-content">
     <div class="flex items-center justify-between mb-6">
@@ -518,9 +483,7 @@ tailwind.config = {
         <i class="fas fa-xmark text-sm" style="color:var(--fg-muted)"></i>
       </button>
     </div>
-
     <div class="space-y-4">
-      <!-- Preset -->
       <div>
         <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Preset</label>
         <select id="presetSelect" class="input-field" onchange="applyPreset()">
@@ -533,15 +496,10 @@ tailwind.config = {
           <option value="custom">Custom</option>
         </select>
       </div>
-
-      <!-- Endpoint -->
       <div>
         <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">API Endpoint</label>
         <input type="url" id="apiEndpoint" class="input-field font-mono text-xs" placeholder="https://api.openai.com/v1/chat/completions">
-        <p class="text-xs mt-1" style="color:var(--fg-muted)">Endpoint API yang kompatibel dengan format OpenAI Chat Completions</p>
       </div>
-
-      <!-- API Key -->
       <div>
         <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">API Key</label>
         <div class="relative">
@@ -552,14 +510,10 @@ tailwind.config = {
         </div>
         <p class="text-xs mt-1" style="color:var(--fg-muted)">Key disimpan di localStorage browser Anda, tidak dikirim ke server manapun</p>
       </div>
-
-      <!-- Model -->
       <div>
         <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Model</label>
         <input type="text" id="modelName" class="input-field font-mono text-xs" placeholder="gpt-4o-mini">
       </div>
-
-      <!-- Temperature -->
       <div>
         <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">
           Temperature: <span id="tempValue">0.3</span>
@@ -567,20 +521,14 @@ tailwind.config = {
         <input type="range" id="temperature" min="0" max="1" step="0.1" value="0.3"
                class="w-full accent-emerald-500" oninput="document.getElementById('tempValue').textContent=this.value">
       </div>
-
-      <!-- Max Tokens -->
       <div>
         <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Max Tokens</label>
         <input type="number" id="maxTokens" class="input-field font-mono text-xs" value="4096" min="256" max="128000">
       </div>
-
-      <!-- System Prompt -->
       <div>
         <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">System Prompt</label>
         <textarea id="systemPrompt" class="input-field" rows="5"></textarea>
       </div>
-
-      <!-- Actions -->
       <div class="flex gap-2 pt-2">
         <button onclick="saveSettings()" class="btn-primary flex-1">Simpan Pengaturan</button>
         <button onclick="testConnection()" class="btn-ghost flex-1" id="btnTest">
@@ -594,63 +542,30 @@ tailwind.config = {
 <script>
 // ===================== STATE =====================
 const state = {
-  rawData: [],
-  columns: [],
-  numericCols: [],
-  categoryCols: [],
-  chartConfigs: [],
-  charts: [],
-  fileName: '',
+  rawData: [], columns: [], numericCols: [], categoryCols: [],
+  chartConfigs: [], charts: [], fileName: '',
   settings: {
     endpoint: 'https://api.openai.com/v1/chat/completions',
-    apiKey: '',
-    model: 'gpt-4o-mini',
-    temperature: 0.3,
-    maxTokens: 4096,
-    systemPrompt: '',
-    preset: 'openai'
+    apiKey: '', model: 'gpt-4o-mini',
+    temperature: 0.3, maxTokens: 4096,
+    systemPrompt: '', preset: 'openai'
   },
-  isGenerating: false,
-  fallbackUsed: false
+  isGenerating: false, fallbackUsed: false
 };
 
 // ===================== PRESETS =====================
 const PRESETS = {
-  openai: {
-    endpoint: 'https://api.openai.com/v1/chat/completions',
-    model: 'gpt-4o-mini'
-  },
-  anthropic: {
-    endpoint: 'https://api.anthropic.com/v1/messages',
-    model: 'claude-sonnet-4-20250514'
-  },
-  ollama: {
-    endpoint: 'http://localhost:11434/v1/chat/completions',
-    model: 'llama3',
-    apiKey: 'ollama'
-  },
-  groq: {
-    endpoint: 'https://api.groq.com/openai/v1/chat/completions',
-    model: 'llama-3.3-70b-versatile'
-  },
-  deepseek: {
-    endpoint: 'https://api.deepseek.com/v1/chat/completions',
-    model: 'deepseek-chat'
-  },
-  openrouter: {
-    endpoint: 'https://openrouter.ai/api/v1/chat/completions',
-    model: 'meta-llama/llama-3.3-70b-instruct'
-  },
-  custom: {
-    endpoint: '',
-    model: ''
-  }
+  openai: { endpoint: 'https://api.openai.com/v1/chat/completions', model: 'gpt-4o-mini' },
+  anthropic: { endpoint: 'https://api.anthropic.com/v1/messages', model: 'claude-sonnet-4-20250514' },
+  ollama: { endpoint: 'http://localhost:11434/v1/chat/completions', model: 'llama3', apiKey: 'ollama' },
+  groq: { endpoint: 'https://api.groq.com/openai/v1/chat/completions', model: 'llama-3.3-70b-versatile' },
+  deepseek: { endpoint: 'https://api.deepseek.com/v1/chat/completions', model: 'deepseek-chat' },
+  openrouter: { endpoint: 'https://openrouter.ai/api/v1/chat/completions', model: 'meta-llama/llama-3.3-70b-instruct' },
+  custom: { endpoint: '', model: '' }
 };
 
 const DEFAULT_SYSTEM_PROMPT = `Kamu adalah ahli analisis data dan visualisasi. Tugasmu adalah menganalisis data yang diberikan dan merekomendasikan chart/grafik terbaik.
-
 Kembalikan respons dalam format JSON yang valid saja, tanpa markdown, tanpa code block, tanpa penjelasan tambahan.
-
 Format respons:
 {
   "stats": [
@@ -671,7 +586,6 @@ Format respons:
   ],
   "insight": "Insight atau temuan penting dari data dalam 2-3 kalimat"
 }
-
 Panduan:
 - Max 4 chart, pilih yang paling informatif
 - Untuk pie/doughnut, gunakan topN (5-8 item teratas) agar tidak terlalu ramai
@@ -682,14 +596,7 @@ Panduan:
 - Gunakan warna yang kontras dan menarik
 - Stats berisi 3-4 metrik ringkasan penting`;
 
-// ===================== CHART COLORS =====================
-const CHART_COLORS = [
-  '#10b981', '#f59e0b', '#3b82f6', '#ef4444', '#8b5cf6',
-  '#ec4899', '#06b6d4', '#84cc16', '#f97316', '#6366f1',
-  '#14b8a6', '#e11d48', '#a855f7', '#0ea5e9', '#22c55e'
-];
-
-const CHART_COLORS_ALPHA = CHART_COLORS.map(c => c + '33');
+const CHART_COLORS = ['#10b981','#f59e0b','#3b82f6','#ef4444','#8b5cf6','#ec4899','#06b6d4','#84cc16','#f97316','#6366f1','#14b8a6','#e11d48','#a855f7','#0ea5e9','#22c55e'];
 
 // ===================== INIT =====================
 document.addEventListener('DOMContentLoaded', () => {
@@ -705,47 +612,30 @@ function createParticles() {
     p.className = 'particle';
     p.style.left = Math.random() * 100 + '%';
     p.style.top = Math.random() * 100 + '%';
-    p.style.animationDuration = (8 + Math.random() * 12) + 's';
-    p.style.animationDelay = Math.random() * 5 + 's';
     p.style.animation = `floatParticle ${8 + Math.random()*12}s ease-in-out ${Math.random()*5}s infinite`;
     container.appendChild(p);
   }
-  // Tambahkan keyframe
   const style = document.createElement('style');
-  style.textContent = `
-    @keyframes floatParticle {
-      0%, 100% { transform: translate(0, 0); opacity: 0.2; }
-      25% { transform: translate(${rand(-40,40)}px, ${rand(-40,40)}px); opacity: 0.4; }
-      50% { transform: translate(${rand(-60,60)}px, ${rand(-20,20)}px); opacity: 0.15; }
-      75% { transform: translate(${rand(-30,30)}px, ${rand(-50,50)}px); opacity: 0.35; }
-    }
-  `;
+  style.textContent = `@keyframes floatParticle {
+    0%, 100% { transform: translate(0, 0); opacity: 0.2; }
+    25% { transform: translate(${rand(-40,40)}px, ${rand(-40,40)}px); opacity: 0.4; }
+    50% { transform: translate(${rand(-60,60)}px, ${rand(-20,20)}px); opacity: 0.15; }
+    75% { transform: translate(${rand(-30,30)}px, ${rand(-50,50)}px); opacity: 0.35; }
+  }`;
   document.head.appendChild(style);
 }
-
 function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
 
 // ===================== UPLOAD =====================
 function setupUploadZone() {
   const zone = document.getElementById('uploadZone');
   const input = document.getElementById('fileInput');
-
   zone.addEventListener('click', () => input.click());
   zone.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') input.click(); });
-
   zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
   zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
-  zone.addEventListener('drop', e => {
-    e.preventDefault();
-    zone.classList.remove('drag-over');
-    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
-  });
-
-  input.addEventListener('change', e => {
-    if (e.target.files.length) handleFile(e.target.files[0]);
-  });
-
-  // Mouse follow untuk glow effect
+  zone.addEventListener('drop', e => { e.preventDefault(); zone.classList.remove('drag-over'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
+  input.addEventListener('change', e => { if (e.target.files.length) handleFile(e.target.files[0]); });
   zone.addEventListener('mousemove', e => {
     const rect = zone.getBoundingClientRect();
     zone.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
@@ -755,42 +645,29 @@ function setupUploadZone() {
 
 function handleFile(file) {
   const ext = file.name.split('.').pop().toLowerCase();
-  if (!['xlsx', 'xls', 'csv'].includes(ext)) {
-    showToast('Format file tidak didukung. Gunakan .xlsx, .xls, atau .csv', 'error');
-    return;
-  }
+  if (!['xlsx', 'xls', 'csv'].includes(ext)) { showToast('Format file tidak didukung. Gunakan .xlsx, .xls, atau .csv', 'error'); return; }
   state.fileName = file.name;
   const reader = new FileReader();
   reader.onload = e => {
     try {
       const data = new Uint8Array(e.target.result);
       const wb = XLSX.read(data, { type: 'array', cellDates: true });
-      const ws = wb.Sheets[wb.SheetNames[0]];
-      const json = XLSX.utils.sheet_to_json(ws, { defval: '' });
-      if (json.length === 0) {
-        showToast('File kosong atau tidak ada data', 'error');
-        return;
-      }
+      const json = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { defval: '' });
+      if (json.length === 0) { showToast('File kosong atau tidak ada data', 'error'); return; }
       processData(json);
-    } catch (err) {
-      showToast('Gagal membaca file: ' + err.message, 'error');
-    }
+    } catch (err) { showToast('Gagal membaca file: ' + err.message, 'error'); }
   };
   reader.readAsArrayBuffer(file);
 }
 
-// ===================== SAMPLE DATA =====================
 function loadSampleData() {
   const categories = ['Elektronik', 'Pakaian', 'Makanan', 'Olahraga', 'Buku', 'Rumah Tangga', 'Kesehatan', 'Otomotif'];
   const cities = ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Semarang', 'Makassar', 'Yogyakarta', 'Denpasar'];
   const channels = ['Online', 'Offline', 'Marketplace', 'Sosial Media'];
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
-
   const data = [];
   for (let i = 0; i < 200; i++) {
-    const month = months[Math.floor(Math.random() * 12)];
-    const cat = categories[Math.floor(Math.random() * categories.length)];
-    const base = { 'Bulan': month, 'Kategori': cat, 'Kota': cities[Math.floor(Math.random() * cities.length)], 'Channel': channels[Math.floor(Math.random() * channels.length)] };
+    const base = { 'Bulan': months[Math.floor(Math.random() * 12)], 'Kategori': categories[Math.floor(Math.random() * categories.length)], 'Kota': cities[Math.floor(Math.random() * cities.length)], 'Channel': channels[Math.floor(Math.random() * channels.length)] };
     base['Penjualan'] = Math.round(500 + Math.random() * 9500);
     base['Pendapatan'] = Math.round(base['Penjualan'] * (15 + Math.random() * 85));
     base['Profit'] = Math.round(base['Pendapatan'] * (0.05 + Math.random() * 0.35));
@@ -802,32 +679,19 @@ function loadSampleData() {
   processData(data);
 }
 
-// ===================== PROCESS DATA =====================
 function processData(json) {
   state.rawData = json;
   state.columns = Object.keys(json[0]);
-
-  // Deteksi tipe kolom
-  state.numericCols = [];
-  state.categoryCols = [];
-
+  state.numericCols = []; state.categoryCols = [];
   state.columns.forEach(col => {
     const sample = json.slice(0, 20).map(r => r[col]).filter(v => v !== '' && v !== null && v !== undefined);
     const numCount = sample.filter(v => typeof v === 'number' || (!isNaN(parseFloat(v)) && isFinite(v))).length;
     if (numCount > sample.length * 0.7 && numCount > 0) {
       state.numericCols.push(col);
-      // Konversi ke number
       json.forEach(r => { if (r[col] !== '' && r[col] !== null) r[col] = parseFloat(r[col]); });
-    } else {
-      state.categoryCols.push(col);
-    }
+    } else { state.categoryCols.push(col); }
   });
-
-  if (state.numericCols.length === 0) {
-    showToast('Tidak ditemukan kolom numerik dalam data', 'error');
-    return;
-  }
-
+  if (state.numericCols.length === 0) { showToast('Tidak ditemukan kolom numerik dalam data', 'error'); return; }
   showSection('loading');
   generateDashboard();
 }
@@ -835,13 +699,9 @@ function processData(json) {
 // ===================== GENERATE DASHBOARD =====================
 async function generateDashboard() {
   updateLoading(10, 'Menganalisis data...', 'Mendeteksi kolom dan tipe data');
-
-  // Siapkan summary data untuk LLM
   const summary = prepareDataSummary();
   updateLoading(30, 'Menghubungi LLM...', `Menggunakan model ${state.settings.model}`);
-
   let llmResponse = null;
-
   try {
     llmResponse = await callLLM(summary);
     updateLoading(70, 'Memproses respons AI...', 'Membuat konfigurasi chart');
@@ -849,28 +709,15 @@ async function generateDashboard() {
     console.warn('LLM gagal, menggunakan fallback:', err.message);
     state.fallbackUsed = true;
   }
-
   updateLoading(85, 'Merender dashboard...', 'Membuat chart interaktif');
-
   let config;
   if (llmResponse) {
-    try {
-      config = parseLLMResponse(llmResponse);
-    } catch (err) {
-      console.warn('Gagal parse respons LLM, fallback:', err.message);
-      config = generateFallbackConfig();
-    }
-  } else {
-    config = generateFallbackConfig();
-  }
-
-  // Validasi dan fix config
+    try { config = parseLLMResponse(llmResponse); } catch (err) { console.warn('Gagal parse respons LLM, fallback:', err.message); config = generateFallbackConfig(); }
+  } else { config = generateFallbackConfig(); }
   config = validateConfig(config);
   state.chartConfigs = config.charts;
-
   updateLoading(95, 'Finishing...', 'Hampir selesai');
   await sleep(300);
-
   renderDashboard(config);
   updateLoading(100, 'Selesai!', '');
   await sleep(400);
@@ -881,766 +728,212 @@ async function generateDashboard() {
 function prepareDataSummary() {
   const sampleRows = state.rawData.slice(0, 50);
   const catValues = {};
-  state.categoryCols.forEach(col => {
-    const unique = [...new Set(state.rawData.map(r => String(r[col])))];
-    catValues[col] = unique.slice(0, 20);
-  });
-
+  state.categoryCols.forEach(col => { catValues[col] = [...new Set(state.rawData.map(r => String(r[col])))].slice(0, 20); });
   const numStats = {};
   state.numericCols.forEach(col => {
     const vals = state.rawData.map(r => r[col]).filter(v => typeof v === 'number' && !isNaN(v));
-    numStats[col] = {
-      min: Math.min(...vals),
-      max: Math.max(...vals),
-      avg: Math.round(vals.reduce((a, b) => a + b, 0) / vals.length * 100) / 100,
-      sum: Math.round(vals.reduce((a, b) => a + b, 0) * 100) / 100,
-      count: vals.length
-    };
+    numStats[col] = { min: Math.min(...vals), max: Math.max(...vals), avg: Math.round(vals.reduce((a, b) => a + b, 0) / vals.length * 100) / 100, sum: Math.round(vals.reduce((a, b) => a + b, 0) * 100) / 100, count: vals.length };
   });
-
-  return {
-    fileName: state.fileName,
-    totalRows: state.rawData.length,
-    columns: state.columns,
-    numericCols: state.numericCols,
-    categoryCols: state.categoryCols,
-    categoryValues: catValues,
-    numericStats: numStats,
-    sampleRows
-  };
+  return { fileName: state.fileName, totalRows: state.rawData.length, columns: state.columns, numericCols: state.numericCols, categoryCols: state.categoryCols, categoryValues: catValues, numericStats: numStats, sampleRows };
 }
 
 // ===================== LLM CALL =====================
 async function callLLM(summary) {
   const s = state.settings;
-  if (!s.apiKey && s.preset !== 'ollama') {
-    throw new Error('API Key belum diatur');
-  }
+  if (!s.apiKey && s.preset !== 'ollama') throw new Error('API Key belum diatur');
+  if (!s.endpoint) throw new Error('Endpoint belum diatur');
 
-  const userPrompt = `Analisis data berikut dan buat rekomendasi dashboard:
-
-File: ${summary.fileName}
-Total Baris: ${summary.totalRows}
-Kolom: ${summary.columns.join(', ')}
-Kolom Numerik: ${summary.numericCols.join(', ')}
-Kolom Kategorikal: ${summary.categoryCols.join(', ')}
-
-Statistik Numerik:
- ${JSON.stringify(summary.numericStats, null, 2)}
-
-Nilai Unik Kategorikal (maks 20 per kolom):
- ${JSON.stringify(summary.categoryValues, null, 2)}
-
-Contoh 10 baris pertama:
- ${JSON.stringify(summary.sampleRows.slice(0, 10), null, 2)}
-
-Buat JSON rekomendasi dashboard sesuai format yang diminta.`;
+  const userPrompt = `Analisis data berikut dan buat rekomendasi dashboard:\n\nFile: ${summary.fileName}\nTotal Baris: ${summary.totalRows}\nKolom: ${summary.columns.join(', ')}\nKolom Numerik: ${summary.numericCols.join(', ')}\nKolom Kategorikal: ${summary.categoryCols.join(', ')}\n\nStatistik Numerik:\n${JSON.stringify(summary.numericStats, null, 2)}\n\nNilai Unik Kategorikal:\n${JSON.stringify(summary.categoryValues, null, 2)}\n\nContoh 10 baris pertama:\n${JSON.stringify(summary.sampleRows.slice(0, 10), null, 2)}\n\nBuat JSON rekomendasi dashboard sesuai format yang diminta.`;
 
   const headers = { 'Content-Type': 'application/json' };
-  if (s.preset !== 'ollama' && s.apiKey) {
-    headers['Authorization'] = `Bearer ${s.apiKey}`;
-  }
-  // Anthropic pakai header berbeda
-  if (s.preset === 'anthropic') {
-    headers['x-api-key'] = s.apiKey;
-    headers['anthropic-version'] = '2023-06-01';
-    delete headers['Authorization'];
-  }
+  if (s.preset !== 'ollama' && s.apiKey) headers['Authorization'] = `Bearer ${s.apiKey}`;
+  if (s.preset === 'anthropic') { headers['x-api-key'] = s.apiKey; headers['anthropic-version'] = '2023-06-01'; delete headers['Authorization']; }
 
   const systemPrompt = s.systemPrompt || DEFAULT_SYSTEM_PROMPT;
-
   let body;
-  if (s.preset === 'anthropic') {
-    body = {
-      model: s.model,
-      max_tokens: s.maxTokens,
-      system: systemPrompt,
-      messages: [{ role: 'user', content: userPrompt }]
-    };
-  } else {
-    body = {
-      model: s.model,
-      temperature: s.temperature,
-      max_tokens: s.maxTokens,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt }
-      ]
-    };
-  }
+  if (s.preset === 'anthropic') { body = { model: s.model, max_tokens: s.maxTokens, system: systemPrompt, messages: [{ role: 'user', content: userPrompt }] }; }
+  else { body = { model: s.model, temperature: s.temperature, max_tokens: s.maxTokens, messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }; }
 
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 30000);
-
+  const timeout = setTimeout(() => controller.abort(), 60000);
   try {
-    const resp = await fetch(s.endpoint, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(body),
-      signal: controller.signal
-    });
-
+    const resp = await fetch(s.endpoint, { method: 'POST', headers, body: JSON.stringify(body), signal: controller.signal });
     clearTimeout(timeout);
-    if (!resp.ok) {
-      const errText = await resp.text().catch(() => '');
-      throw new Error(`HTTP ${resp.status}: ${errText.slice(0, 200)}`);
-    }
-
+    if (!resp.ok) { const errText = await resp.text().catch(() => ''); throw new Error(`HTTP ${resp.status}: ${errText.slice(0, 200)}`); }
     const json = await resp.json();
-
-    // Extract text dari respons (bervariasi antar provider)
     let text = '';
-    if (json.choices && json.choices[0]) {
-      text = json.choices[0].message?.content || '';
-    } else if (json.content && json.content[0]) {
-      text = json.content[0].text || '';
-    } else if (json.message) {
-      text = typeof json.message === 'string' ? json.message : json.message.content || '';
-    } else if (typeof json === 'string') {
-      text = json;
-    }
-
+    if (json.choices && json.choices[0]) text = json.choices[0].message?.content || '';
+    else if (json.content && json.content[0]) text = json.content[0].text || '';
+    else if (json.message) text = typeof json.message === 'string' ? json.message : json.message.content || '';
+    else if (typeof json === 'string') text = json;
     if (!text) throw new Error('Respons kosong dari LLM');
     return text;
-  } catch (err) {
-    clearTimeout(timeout);
-    throw err;
-  }
+  } catch (err) { clearTimeout(timeout); throw err; }
 }
 
-// ===================== PARSE LLM RESPONSE =====================
 function parseLLMResponse(text) {
-  // Bersihkan markdown code block jika ada
-  let cleaned = text.trim();
-  cleaned = cleaned.replace(/^```(?:json)?\s*\n?/i, '');
-  cleaned = cleaned.replace(/\n?```\s*$/i, '');
-  cleaned = cleaned.trim();
-
-  // Coba parse langsung
-  try {
-    return JSON.parse(cleaned);
-  } catch {}
-
-  // Coba extract JSON dari teks
+  let cleaned = text.trim().replace(/^```(?:json)?\s*\n?/i, '').replace(/\n?```\s*$/i, '').trim();
+  try { return JSON.parse(cleaned); } catch {}
   const jsonMatch = cleaned.match(/\{[\s\S]*\}/);
-  if (jsonMatch) {
-    try {
-      return JSON.parse(jsonMatch[0]);
-    } catch {}
-  }
-
+  if (jsonMatch) { try { return JSON.parse(jsonMatch[0]); } catch {} }
   throw new Error('Tidak bisa parse JSON dari respons LLM');
 }
 
-// ===================== FALLBACK CONFIG =====================
 function generateFallbackConfig() {
-  const stats = [];
-  const charts = [];
-
-  // Stats dari kolom numerik pertama-keempat
+  const stats = []; const charts = [];
   state.numericCols.slice(0, 4).forEach(col => {
     const vals = state.rawData.map(r => r[col]).filter(v => typeof v === 'number');
-    const sum = vals.reduce((a, b) => a + b, 0);
-    stats.push({
-      label: `Total ${col}`,
-      value: formatNumber(sum),
-      rawValue: sum,
-      prefix: '',
-      suffix: ''
-    });
+    stats.push({ label: `Total ${col}`, value: formatNumber(vals.reduce((a, b) => a + b, 0)), rawValue: vals.reduce((a, b) => a + b, 0), prefix: '', suffix: '' });
   });
-
-  // Chart 1: Bar chart — kategori pertama vs numerik pertama
-  if (state.categoryCols.length > 0 && state.numericCols.length > 0) {
-    const catCol = state.categoryCols[0];
-    const numCol = state.numericCols[0];
-    charts.push({
-      type: 'bar',
-      title: `${numCol} per ${catCol}`,
-      description: `Distribusi ${numCol} berdasarkan ${catCol}`,
-      xAxis: catCol,
-      yAxis: [numCol],
-      aggregation: 'sum',
-      sort: 'desc',
-      topN: 10,
-      colors: CHART_COLORS.slice(0, 10)
-    });
-  }
-
-  // Chart 2: Pie/Doughnut — kategori pertama vs count atau numerik kedua
-  if (state.categoryCols.length > 0) {
-    const catCol = state.categoryCols[0];
-    const numCol = state.numericCols.length > 1 ? state.numericCols[1] : null;
-    charts.push({
-      type: 'doughnut',
-      title: `Proporsi ${catCol}${numCol ? ` (${numCol})` : ''}`,
-      description: `Komposisi berdasarkan ${catCol}`,
-      xAxis: catCol,
-      yAxis: numCol ? [numCol] : [],
-      aggregation: numCol ? 'sum' : 'count',
-      sort: 'desc',
-      topN: 8,
-      colors: CHART_COLORS.slice(0, 8)
-    });
-  }
-
-  // Chart 3: Line chart jika ada kolom yang mirip tanggal/bulan
-  const timeCol = state.categoryCols.find(c => {
-    const vals = [...new Set(state.rawData.map(r => String(r[c])))];
-    return vals.some(v => /jan|feb|mar|apr|mei|jun|jul|agu|sep|okt|nov|des|mon|tue|wed|thu|fri|sat|sun|\d{4}|-|\//i.test(v));
-  });
-  if (timeCol && state.numericCols.length > 0) {
-    charts.push({
-      type: 'line',
-      title: `Tren ${state.numericCols[0]} per ${timeCol}`,
-      description: `Perubahan ${state.numericCols[0]} sepanjang ${timeCol}`,
-      xAxis: timeCol,
-      yAxis: [state.numericCols[0]],
-      aggregation: 'sum',
-      sort: 'none',
-      topN: null,
-      colors: [CHART_COLORS[0]]
-    });
-  }
-
-  // Chart 4: Bar horizontal jika ada kategori kedua
-  if (state.categoryCols.length > 1 && state.numericCols.length > 0) {
-    const catCol = state.categoryCols[1];
-    const numCol = state.numericCols[0];
-    charts.push({
-      type: 'bar',
-      title: `${numCol} per ${catCol}`,
-      description: `Perbandingan ${numCol} antar ${catCol}`,
-      xAxis: catCol,
-      yAxis: [numCol],
-      aggregation: 'avg',
-      sort: 'desc',
-      topN: 8,
-      colors: CHART_COLORS.slice(0, 8)
-    });
-  }
-
-  return {
-    stats,
-    charts,
-    insight: state.fallbackUsed
-      ? 'Dashboard dibuat secara otomatis tanpa AI (LLM tidak terhubung). Hubungkan LLM di pengaturan untuk mendapatkan insight yang lebih baik.'
-      : 'Dashboard dibuat berdasarkan analisis otomatis.'
-  };
+  if (state.categoryCols.length > 0 && state.numericCols.length > 0) charts.push({ type: 'bar', title: `${state.numericCols[0]} per ${state.categoryCols[0]}`, description: `Distribusi berdasarkan ${state.categoryCols[0]}`, xAxis: state.categoryCols[0], yAxis: [state.numericCols[0]], aggregation: 'sum', sort: 'desc', topN: 10, colors: CHART_COLORS.slice(0, 10) });
+  if (state.categoryCols.length > 0) { const numCol = state.numericCols.length > 1 ? state.numericCols[1] : null; charts.push({ type: 'doughnut', title: `Proporsi ${state.categoryCols[0]}`, description: `Komposisi berdasarkan ${state.categoryCols[0]}`, xAxis: state.categoryCols[0], yAxis: numCol ? [numCol] : [], aggregation: numCol ? 'sum' : 'count', sort: 'desc', topN: 8, colors: CHART_COLORS.slice(0, 8) }); }
+  const timeCol = state.categoryCols.find(c => [...new Set(state.rawData.map(r => String(r[c])))].some(v => /jan|feb|mar|apr|mei|jun|jul|agu|sep|okt|nov|des|\d{4}/i.test(v)));
+  if (timeCol && state.numericCols.length > 0) charts.push({ type: 'line', title: `Tren ${state.numericCols[0]} per ${timeCol}`, description: `Perubahan sepanjang ${timeCol}`, xAxis: timeCol, yAxis: [state.numericCols[0]], aggregation: 'sum', sort: 'none', topN: null, colors: [CHART_COLORS[0]] });
+  if (state.categoryCols.length > 1 && state.numericCols.length > 0) charts.push({ type: 'bar', title: `${state.numericCols[0]} per ${state.categoryCols[1]}`, description: `Perbandingan antar ${state.categoryCols[1]}`, xAxis: state.categoryCols[1], yAxis: [state.numericCols[0]], aggregation: 'avg', sort: 'desc', topN: 8, colors: CHART_COLORS.slice(0, 8) });
+  return { stats, charts, insight: state.fallbackUsed ? 'Dashboard dibuat secara otomatis tanpa AI (LLM tidak terhubung). Hubungkan LLM di pengaturan untuk mendapatkan insight yang lebih baik.' : 'Dashboard dibuat berdasarkan analisis otomatis.' };
 }
 
-// ===================== VALIDATE CONFIG =====================
 function validateConfig(config) {
   if (!config.charts || !Array.isArray(config.charts)) config.charts = [];
   if (!config.stats || !Array.isArray(config.stats)) config.stats = [];
   if (!config.insight) config.insight = '';
-
   const validTypes = ['bar', 'line', 'pie', 'doughnut', 'scatter', 'radar', 'polarArea'];
-
   config.charts = config.charts.filter(c => {
     if (!validTypes.includes(c.type)) return false;
-    if (!c.xAxis || !state.columns.includes(c.xAxis)) {
-      c.xAxis = state.categoryCols[0] || state.columns[0];
-    }
+    if (!c.xAxis || !state.columns.includes(c.xAxis)) c.xAxis = state.categoryCols[0] || state.columns[0];
     if (!c.yAxis || !Array.isArray(c.yAxis)) c.yAxis = [];
     c.yAxis = c.yAxis.filter(y => state.columns.includes(y));
-    if (c.type !== 'pie' && c.type !== 'doughnut' && c.type !== 'radar' && c.type !== 'polarArea') {
-      if (c.yAxis.length === 0 && state.numericCols.length > 0) {
-        c.yAxis = [state.numericCols[0]];
-      }
-    }
+    if (!['pie','doughnut','radar','polarArea'].includes(c.type) && c.yAxis.length === 0 && state.numericCols.length > 0) c.yAxis = [state.numericCols[0]];
     if (!c.title) c.title = `${c.type.charAt(0).toUpperCase() + c.type.slice(1)} Chart`;
     if (!c.colors || !Array.isArray(c.colors)) c.colors = CHART_COLORS;
     if (!c.aggregation) c.aggregation = 'sum';
     return true;
   });
-
-  // Stats fallback jika kosong
-  if (config.stats.length === 0) {
-    state.numericCols.slice(0, 4).forEach(col => {
-      const vals = state.rawData.map(r => r[col]).filter(v => typeof v === 'number');
-      config.stats.push({
-        label: `Total ${col}`,
-        value: formatNumber(vals.reduce((a, b) => a + b, 0)),
-        suffix: ''
-      });
-    });
-  }
-
+  if (config.stats.length === 0) { state.numericCols.slice(0, 4).forEach(col => { const vals = state.rawData.map(r => r[col]).filter(v => typeof v === 'number'); config.stats.push({ label: `Total ${col}`, value: formatNumber(vals.reduce((a, b) => a + b, 0)), suffix: '' }); }); }
   return config;
 }
 
 // ===================== RENDER DASHBOARD =====================
 function renderDashboard(config) {
-  // Header
   document.getElementById('dashboardTitle').textContent = `Dashboard — ${state.fileName}`;
   document.getElementById('dashboardSubtitle').textContent = `${state.rawData.length} baris, ${state.columns.length} kolom (${state.numericCols.length} numerik, ${state.categoryCols.length} kategorikal)`;
-
-  // LLM status
   const statusEl = document.getElementById('llmStatusText');
-  if (state.fallbackUsed) {
-    statusEl.textContent = 'Mode Offline (tanpa LLM)';
-    statusEl.style.color = 'var(--accent2)';
-    statusEl.previousElementSibling.style.background = 'var(--accent2)';
-  }
-
-  // Stats
+  const statusDot = document.getElementById('statusDot');
+  if (state.fallbackUsed) { statusEl.textContent = 'Mode Offline (tanpa LLM)'; statusEl.style.color = 'var(--accent2)'; statusDot.style.background = 'var(--accent2)'; }
   renderStats(config.stats);
-
-  // Charts
   renderCharts(config.charts);
-
-  // Insight
-  if (config.insight) {
-    const el = document.getElementById('aiInsight');
-    el.classList.remove('hidden');
-    document.getElementById('aiInsightText').textContent = config.insight;
-  }
-
-  // Data table
+  if (config.insight) { document.getElementById('aiInsight').classList.remove('hidden'); document.getElementById('aiInsightText').textContent = config.insight; }
   renderDataTable();
 }
 
 function renderStats(stats) {
-  const container = document.getElementById('statsRow');
-  container.innerHTML = '';
+  const container = document.getElementById('statsRow'); container.innerHTML = '';
   stats.forEach((s, i) => {
-    const card = document.createElement('div');
-    card.className = 'stat-card fade-in';
-    card.style.animationDelay = (i * 0.1) + 's';
-    const changeHtml = s.change !== undefined
-      ? `<span class="text-xs ml-2 ${s.change >= 0 ? 'text-emerald-400' : 'text-red-400'}">
-           <i class="fas fa-${s.change >= 0 ? 'arrow-up' : 'arrow-down'} text-[10px]"></i>
-           ${Math.abs(s.change)}%
-         </span>`
-      : '';
-    card.innerHTML = `
-      <p class="text-xs font-semibold uppercase tracking-wide relative z-10" style="color:var(--fg-muted)">${s.label}</p>
-      <p class="text-2xl font-bold mt-1 relative z-10">${s.prefix || ''}${typeof s.value === 'number' ? formatNumber(s.value) : s.value}${s.suffix || ''}${changeHtml}</p>
-      ${s.changeLabel ? `<p class="text-xs mt-1 relative z-10" style="color:var(--fg-muted)">${s.changeLabel}</p>` : ''}
-    `;
+    const card = document.createElement('div'); card.className = 'stat-card fade-in'; card.style.animationDelay = (i * 0.1) + 's';
+    const changeHtml = s.change !== undefined ? `<span class="text-xs ml-2 ${s.change >= 0 ? 'text-emerald-400' : 'text-red-400'}"><i class="fas fa-${s.change >= 0 ? 'arrow-up' : 'arrow-down'} text-[10px]"></i>${Math.abs(s.change)}%</span>` : '';
+    card.innerHTML = `<p class="text-xs font-semibold uppercase tracking-wide relative z-10" style="color:var(--fg-muted)">${s.label}</p><p class="text-2xl font-bold mt-1 relative z-10">${s.prefix || ''}${typeof s.value === 'number' ? formatNumber(s.value) : s.value}${s.suffix || ''}${changeHtml}</p>${s.changeLabel ? `<p class="text-xs mt-1 relative z-10" style="color:var(--fg-muted)">${s.changeLabel}</p>` : ''}`;
     container.appendChild(card);
   });
 }
 
 function renderCharts(chartConfigs) {
-  const container = document.getElementById('chartsGrid');
-  container.innerHTML = '';
-  // Destroy chart lama
-  state.charts.forEach(c => c.destroy());
-  state.charts = [];
-
+  const container = document.getElementById('chartsGrid'); container.innerHTML = '';
+  state.charts.forEach(c => c.destroy()); state.charts = [];
   chartConfigs.forEach((cfg, i) => {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'chart-card fade-in';
-    wrapper.style.animationDelay = (0.2 + i * 0.12) + 's';
-
-    wrapper.innerHTML = `
-      <div class="flex items-start justify-between mb-3">
-        <div>
-          <h3 class="font-semibold text-sm">${cfg.title}</h3>
-          ${cfg.description ? `<p class="text-xs mt-0.5" style="color:var(--fg-muted)">${cfg.description}</p>` : ''}
-        </div>
-        <div class="flex gap-1">
-          <button onclick="refreshChart(${i})" class="w-7 h-7 rounded-md flex items-center justify-center" style="background:var(--card-hover);border:1px solid var(--border);color:var(--fg-muted);cursor:pointer;" title="Refresh chart" aria-label="Refresh chart">
-            <i class="fas fa-arrows-rotate text-xs"></i>
-          </button>
-        </div>
-      </div>
-      <div style="position:relative;height:300px;">
-        <canvas id="chart_${i}"></canvas>
-      </div>
-    `;
+    const wrapper = document.createElement('div'); wrapper.className = 'chart-card fade-in'; wrapper.style.animationDelay = (0.2 + i * 0.12) + 's';
+    wrapper.innerHTML = `<div class="flex items-start justify-between mb-3"><div><h3 class="font-semibold text-sm">${cfg.title}</h3>${cfg.description ? `<p class="text-xs mt-0.5" style="color:var(--fg-muted)">${cfg.description}</p>` : ''}</div><button onclick="refreshChart(${i})" class="w-7 h-7 rounded-md flex items-center justify-center" style="background:var(--card-hover);border:1px solid var(--border);color:var(--fg-muted);cursor:pointer;" title="Refresh" aria-label="Refresh"><i class="fas fa-arrows-rotate text-xs"></i></button></div><div style="position:relative;height:300px;"><canvas id="chart_${i}"></canvas></div>`;
     container.appendChild(wrapper);
   });
-
-  // Render chart setelah DOM siap
-  requestAnimationFrame(() => {
-    chartConfigs.forEach((cfg, i) => {
-      const canvas = document.getElementById(`chart_${i}`);
-      if (!canvas) return;
-      const chart = buildChart(canvas, cfg);
-      state.charts.push(chart);
-    });
-  });
+  requestAnimationFrame(() => { chartConfigs.forEach((cfg, i) => { const canvas = document.getElementById(`chart_${i}`); if (canvas) state.charts.push(buildChart(canvas, cfg)); }); });
 }
 
 function buildChart(canvas, cfg) {
-  const ctx = canvas.getContext('2d');
-  const data = aggregateData(cfg);
-
-  const isPie = ['pie', 'doughnut', 'polarArea'].includes(cfg.type);
-  const isRadar = cfg.type === 'radar';
-
+  const ctx = canvas.getContext('2d'); const data = aggregateData(cfg);
+  const isPie = ['pie', 'doughnut', 'polarArea'].includes(cfg.type); const isRadar = cfg.type === 'radar';
   let chartData, options;
-
   if (isPie) {
-    chartData = {
-      labels: data.labels,
-      datasets: [{
-        data: data.values[0] || [],
-        backgroundColor: cfg.colors.slice(0, data.labels.length),
-        borderColor: 'rgba(6,9,15,0.8)',
-        borderWidth: 2,
-        hoverOffset: 8
-      }]
-    };
-    options = {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          position: 'right',
-          labels: { color: '#94a3b8', font: { family: 'Space Grotesk', size: 11 }, padding: 12, usePointStyle: true, pointStyleWidth: 8 }
-        },
-        tooltip: {
-          backgroundColor: 'rgba(17,24,39,0.95)',
-          titleColor: '#e2e8f0',
-          bodyColor: '#94a3b8',
-          borderColor: '#1e293b',
-          borderWidth: 1,
-          cornerRadius: 8,
-          padding: 12,
-          titleFont: { family: 'Space Grotesk', weight: '600' },
-          bodyFont: { family: 'Space Grotesk' },
-          callbacks: {
-            label: function(ctx) {
-              const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
-              const pct = ((ctx.parsed / total) * 100).toFixed(1);
-              return ` ${ctx.label}: ${formatNumber(ctx.parsed)} (${pct}%)`;
-            }
-          }
-        }
-      }
-    };
+    chartData = { labels: data.labels, datasets: [{ data: data.values[0] || [], backgroundColor: cfg.colors.slice(0, data.labels.length), borderColor: 'rgba(6,9,15,0.8)', borderWidth: 2, hoverOffset: 8 }] };
+    options = { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: '#94a3b8', font: { family: 'Space Grotesk', size: 11 }, padding: 12, usePointStyle: true, pointStyleWidth: 8 } }, tooltip: getTooltipConfig(true) } };
     if (cfg.type === 'doughnut') options.cutout = '55%';
   } else if (cfg.type === 'scatter') {
-    chartData = {
-      datasets: [{
-        label: cfg.yAxis[0] || 'Value',
-        data: data.scatterData || [],
-        backgroundColor: cfg.colors[0] + '99',
-        borderColor: cfg.colors[0],
-        borderWidth: 1,
-        pointRadius: 5,
-        pointHoverRadius: 8
-      }]
-    };
+    chartData = { datasets: [{ label: cfg.yAxis[0] || 'Value', data: data.scatterData || [], backgroundColor: cfg.colors[0] + '99', borderColor: cfg.colors[0], borderWidth: 1, pointRadius: 5, pointHoverRadius: 8 }] };
     options = getCartesianOptions(cfg);
   } else if (isRadar) {
-    chartData = {
-      labels: data.labels,
-      datasets: (data.values[0] || []).map((_, di) => ({
-        label: cfg.yAxis[di] || `Series ${di + 1}`,
-        data: data.values[di] || [],
-        borderColor: cfg.colors[di % cfg.colors.length],
-        backgroundColor: cfg.colors[di % cfg.colors.length] + '22',
-        borderWidth: 2,
-        pointBackgroundColor: cfg.colors[di % cfg.colors.length],
-        pointRadius: 4
-      }))
-    };
-    options = {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        r: {
-          angleLines: { color: '#1e293b' },
-          grid: { color: '#1e293b' },
-          pointLabels: { color: '#94a3b8', font: { family: 'Space Grotesk', size: 11 } },
-          ticks: { color: '#64748b', backdropColor: 'transparent', font: { size: 10 } }
-        }
-      },
-      plugins: {
-        legend: { labels: { color: '#94a3b8', font: { family: 'Space Grotesk', size: 11 }, usePointStyle: true } },
-        tooltip: getTooltipConfig()
-      }
-    };
+    chartData = { labels: data.labels, datasets: (data.values[0] || []).map((_, di) => ({ label: cfg.yAxis[di] || `Series ${di + 1}`, data: data.values[di] || [], borderColor: cfg.colors[di % cfg.colors.length], backgroundColor: cfg.colors[di % cfg.colors.length] + '22', borderWidth: 2, pointBackgroundColor: cfg.colors[di % cfg.colors.length], pointRadius: 4 })) };
+    options = { responsive: true, maintainAspectRatio: false, scales: { r: { angleLines: { color: '#1e293b' }, grid: { color: '#1e293b' }, pointLabels: { color: '#94a3b8', font: { family: 'Space Grotesk', size: 11 } }, ticks: { color: '#64748b', backdropColor: 'transparent', font: { size: 10 } } } }, plugins: { legend: { labels: { color: '#94a3b8', font: { family: 'Space Grotesk', size: 11 }, usePointStyle: true } }, tooltip: getTooltipConfig() } };
   } else {
-    // Bar / Line
-    const datasets = (cfg.yAxis || []).map((yCol, di) => {
-      const base = {
-        label: yCol,
-        data: data.values[di] || [],
-        borderWidth: 2
-      };
-      if (cfg.type === 'line') {
-        base.borderColor = cfg.colors[di % cfg.colors.length];
-        base.backgroundColor = cfg.colors[di % cfg.colors.length] + '15';
-        base.fill = true;
-        base.tension = 0.4;
-        base.pointRadius = 4;
-        base.pointHoverRadius = 7;
-        base.pointBackgroundColor = cfg.colors[di % cfg.colors.length];
-      } else {
-        base.backgroundColor = cfg.colors[di % cfg.colors.length] + 'cc';
-        base.borderColor = cfg.colors[di % cfg.colors.length];
-        base.borderRadius = 6;
-        base.borderSkipped = false;
-      }
-      return base;
-    });
-
-    // Jika pie/doughnut tanpa yAxis (count mode), buat satu dataset
-    if (datasets.length === 0 && isPie) {
-      datasets.push({
-        data: data.values[0] || [],
-        backgroundColor: cfg.colors,
-        borderWidth: 0
-      });
-    }
-
-    chartData = { labels: data.labels, datasets };
-    options = getCartesianOptions(cfg);
+    const datasets = (cfg.yAxis || []).map((yCol, di) => { const base = { label: yCol, data: data.values[di] || [], borderWidth: 2 }; if (cfg.type === 'line') { base.borderColor = cfg.colors[di % cfg.colors.length]; base.backgroundColor = cfg.colors[di % cfg.colors.length] + '15'; base.fill = true; base.tension = 0.4; base.pointRadius = 4; base.pointHoverRadius = 7; base.pointBackgroundColor = cfg.colors[di % cfg.colors.length]; } else { base.backgroundColor = cfg.colors[di % cfg.colors.length] + 'cc'; base.borderColor = cfg.colors[di % cfg.colors.length]; base.borderRadius = 6; base.borderSkipped = false; } return base; });
+    chartData = { labels: data.labels, datasets }; options = getCartesianOptions(cfg);
   }
-
-  return new Chart(ctx, {
-    type: cfg.type === 'scatter' ? 'scatter' : cfg.type,
-    data: chartData,
-    options
-  });
+  return new Chart(ctx, { type: cfg.type === 'scatter' ? 'scatter' : cfg.type, data: chartData, options });
 }
 
 function getCartesianOptions(cfg) {
-  const isHorizontal = cfg.type === 'bar' && cfg.yAxis && cfg.yAxis.length > 1 === false && false;
-  return {
-    responsive: true,
-    maintainAspectRatio: false,
-    interaction: { mode: 'index', intersect: false },
-    scales: {
-      x: {
-        grid: { color: '#1e293b22', drawBorder: false },
-        ticks: { color: '#64748b', font: { family: 'Space Grotesk', size: 11 }, maxRotation: 45 },
-        border: { display: false }
-      },
-      y: {
-        grid: { color: '#1e293b44', drawBorder: false },
-        ticks: {
-          color: '#64748b',
-          font: { family: 'Space Grotesk', size: 11 },
-          callback: function(val) { return formatNumber(val); }
-        },
-        border: { display: false },
-        beginAtZero: true
-      }
-    },
-    plugins: {
-      legend: {
-        display: (cfg.yAxis || []).length > 1,
-        labels: { color: '#94a3b8', font: { family: 'Space Grotesk', size: 11 }, usePointStyle: true, pointStyleWidth: 8, padding: 16 }
-      },
-      tooltip: getTooltipConfig()
-    }
-  };
+  return { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, scales: { x: { grid: { color: '#1e293b22' }, ticks: { color: '#64748b', font: { family: 'Space Grotesk', size: 11 }, maxRotation: 45 }, border: { display: false } }, y: { grid: { color: '#1e293b44' }, ticks: { color: '#64748b', font: { family: 'Space Grotesk', size: 11 }, callback: v => formatNumber(v) }, border: { display: false }, beginAtZero: true } }, plugins: { legend: { display: (cfg.yAxis || []).length > 1, labels: { color: '#94a3b8', font: { family: 'Space Grotesk', size: 11 }, usePointStyle: true, pointStyleWidth: 8, padding: 16 } }, tooltip: getTooltipConfig() } };
 }
 
-function getTooltipConfig() {
-  return {
-    backgroundColor: 'rgba(17,24,39,0.95)',
-    titleColor: '#e2e8f0',
-    bodyColor: '#94a3b8',
-    borderColor: '#1e293b',
-    borderWidth: 1,
-    cornerRadius: 8,
-    padding: 12,
-    titleFont: { family: 'Space Grotesk', weight: '600' },
-    bodyFont: { family: 'Space Grotesk' },
-    callbacks: {
-      label: function(ctx) {
-        return ` ${ctx.dataset.label || ''}: ${formatNumber(ctx.parsed.y ?? ctx.parsed)}`;
-      }
-    }
-  };
+function getTooltipConfig(isPie = false) {
+  return { backgroundColor: 'rgba(17,24,39,0.95)', titleColor: '#e2e8f0', bodyColor: '#94a3b8', borderColor: '#1e293b', borderWidth: 1, cornerRadius: 8, padding: 12, titleFont: { family: 'Space Grotesk', weight: '600' }, bodyFont: { family: 'Space Grotesk' }, callbacks: isPie ? { label: ctx => { const t = ctx.dataset.data.reduce((a, b) => a + b, 0); return ` ${ctx.label}: ${formatNumber(ctx.parsed)} (${((ctx.parsed/t)*100).toFixed(1)}%)`; } } : { label: ctx => ` ${ctx.dataset.label || ''}: ${formatNumber(ctx.parsed.y ?? ctx.parsed)}` } };
 }
 
-// ===================== DATA AGGREGATION =====================
 function aggregateData(cfg) {
-  const { xAxis, yAxis, aggregation, sort, topN } = cfg;
-  const isPie = ['pie', 'doughnut', 'polarArea'].includes(cfg.type);
-  const isScatter = cfg.type === 'scatter';
-
-  if (isScatter) {
-    // Scatter: x dan y keduanya numerik
-    const points = state.rawData
-      .map(r => ({ x: parseFloat(r[xAxis]), y: parseFloat(r[yAxis?.[0]]) }))
-      .filter(p => !isNaN(p.x) && !isNaN(p.y));
-    return { labels: [], values: [[]], scatterData: points };
-  }
-
-  // Group by xAxis
-  const groups = {};
-  state.rawData.forEach(row => {
-    const key = String(row[xAxis] || '(kosong)');
-    if (!groups[key]) groups[key] = [];
-    groups[key].push(row);
-  });
-
+  const { xAxis, yAxis, aggregation, sort, topN } = cfg; const isScatter = cfg.type === 'scatter';
+  if (isScatter) { return { labels: [], values: [[]], scatterData: state.rawData.map(r => ({ x: parseFloat(r[xAxis]), y: parseFloat(r[yAxis?.[0]]) })).filter(p => !isNaN(p.x) && !isNaN(p.y)) }; }
+  const groups = {}; state.rawData.forEach(row => { const key = String(row[xAxis] || '(kosong)'); if (!groups[key]) groups[key] = []; groups[key].push(row); });
   let labels = Object.keys(groups);
-
-  // Sort
-  if (sort === 'asc' || sort === 'desc') {
-    labels.sort((a, b) => {
-      let va = 0, vb = 0;
-      if (yAxis && yAxis.length > 0) {
-        const agg = aggregation || 'sum';
-        va = calcAgg(groups[a], yAxis[0], agg);
-        vb = calcAgg(groups[b], yAxis[0], agg);
-      } else {
-        va = groups[a].length;
-        vb = groups[b].length;
-      }
-      return sort === 'asc' ? va - vb : vb - va;
-    });
-  }
-
-  // Top N
-  if (topN && labels.length > topN) {
-    labels = labels.slice(0, topN);
-  }
-
-  // Hitung values per yAxis
-  const values = (yAxis || []).map(yCol => {
-    return labels.map(label => {
-      return calcAgg(groups[label], yCol, aggregation || 'sum');
-    });
-  });
-
-  // Jika tidak ada yAxis (pie count mode)
-  if (!yAxis || yAxis.length === 0) {
-    values.push(labels.map(label => groups[label].length));
-  }
-
+  if (sort === 'asc' || sort === 'desc') { labels.sort((a, b) => { let va = 0, vb = 0; if (yAxis && yAxis.length > 0) { va = calcAgg(groups[a], yAxis[0], aggregation); vb = calcAgg(groups[b], yAxis[0], aggregation); } else { va = groups[a].length; vb = groups[b].length; } return sort === 'asc' ? va - vb : vb - va; }); }
+  if (topN && labels.length > topN) labels = labels.slice(0, topN);
+  const values = (yAxis || []).map(yCol => labels.map(label => calcAgg(groups[label], yCol, aggregation || 'sum')));
+  if (!yAxis || yAxis.length === 0) values.push(labels.map(label => groups[label].length));
   return { labels, values };
 }
 
 function calcAgg(rows, col, agg) {
-  const vals = rows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
-  if (vals.length === 0) return 0;
-  switch (agg) {
-    case 'avg': return Math.round(vals.reduce((a, b) => a + b, 0) / vals.length * 100) / 100;
-    case 'count': return rows.length;
-    case 'max': return Math.max(...vals);
-    case 'min': return Math.min(...vals);
-    case 'sum':
-    default: return Math.round(vals.reduce((a, b) => a + b, 0) * 100) / 100;
-  }
+  const vals = rows.map(r => parseFloat(r[col])).filter(v => !isNaN(v)); if (vals.length === 0) return 0;
+  switch (agg) { case 'avg': return Math.round(vals.reduce((a, b) => a + b, 0) / vals.length * 100) / 100; case 'count': return rows.length; case 'max': return Math.max(...vals); case 'min': return Math.min(...vals); default: return Math.round(vals.reduce((a, b) => a + b, 0) * 100) / 100; }
 }
 
-function refreshChart(index) {
-  const cfg = state.chartConfigs[index];
-  if (!cfg) return;
-  const canvas = document.getElementById(`chart_${index}`);
-  if (!canvas) return;
-  state.charts[index].destroy();
-  state.charts[index] = buildChart(canvas, cfg);
-}
+function refreshChart(index) { const cfg = state.chartConfigs[index]; if (!cfg) return; const canvas = document.getElementById(`chart_${index}`); if (!canvas) return; state.charts[index].destroy(); state.charts[index] = buildChart(canvas, cfg); }
 
-// ===================== DATA TABLE =====================
 function renderDataTable() {
-  const thead = document.getElementById('dataTableHead');
-  const tbody = document.getElementById('dataTableBody');
+  const thead = document.getElementById('dataTableHead'); const tbody = document.getElementById('dataTableBody');
   document.getElementById('dataCount').textContent = `${state.rawData.length} baris`;
-
   thead.innerHTML = '<tr>' + state.columns.map(c => `<th>${c}</th>`).join('') + '</tr>';
-
-  const rows = state.rawData.slice(0, 100);
-  tbody.innerHTML = rows.map(r =>
-    '<tr>' + state.columns.map(c => {
-      let val = r[c];
-      if (val instanceof Date) val = val.toLocaleDateString('id-ID');
-      return `<td title="${val}">${val}</td>`;
-    }).join('') + '</tr>'
-  ).join('');
-
-  if (state.rawData.length > 100) {
-    tbody.innerHTML += `<tr><td colspan="${state.columns.length}" style="text-align:center;color:var(--fg-muted);padding:16px;">
-      Menampilkan 100 dari ${state.rawData.length} baris
-    </td></tr>`;
-  }
+  tbody.innerHTML = state.rawData.slice(0, 100).map(r => '<tr>' + state.columns.map(c => { let val = r[c]; if (val instanceof Date) val = val.toLocaleDateString('id-ID'); return `<td title="${val}">${val}</td>`; }).join('') + '</tr>').join('');
+  if (state.rawData.length > 100) tbody.innerHTML += `<tr><td colspan="${state.columns.length}" style="text-align:center;color:var(--fg-muted);padding:16px;">Menampilkan 100 dari ${state.rawData.length} baris</td></tr>`;
 }
 
 // ===================== CHAT =====================
 async function sendChat() {
-  const input = document.getElementById('chatInput');
-  const msg = input.value.trim();
-  if (!msg) return;
-  input.value = '';
-
+  const input = document.getElementById('chatInput'); const msg = input.value.trim(); if (!msg) return; input.value = '';
   addChatMessage('user', msg);
-
-  // Tambah pesan loading
   const loadingId = addChatMessage('ai', '<div class="spinner" style="margin:4px auto;"></div>', true);
-
   try {
     const summary = prepareDataSummary();
     const contextPrompt = `Konteks data:\nFile: ${summary.fileName}\nBaris: ${summary.totalRows}\nKolom: ${summary.columns.join(', ')}\nNumerik: ${summary.numericCols.join(', ')}\nKategorikal: ${summary.categoryCols.join(', ')}\nStatistik: ${JSON.stringify(summary.numericStats, null, 1)}\n\nPertanyaan: ${msg}\n\nJawab dalam bahasa Indonesia yang jelas dan ringkas.`;
-
-    const s = state.settings;
-    const headers = { 'Content-Type': 'application/json' };
+    const s = state.settings; const headers = { 'Content-Type': 'application/json' };
     if (s.preset !== 'ollama' && s.apiKey) headers['Authorization'] = `Bearer ${s.apiKey}`;
-    if (s.preset === 'anthropic') {
-      headers['x-api-key'] = s.apiKey;
-      headers['anthropic-version'] = '2023-06-01';
-      delete headers['Authorization'];
-    }
-
-    let body;
-    if (s.preset === 'anthropic') {
-      body = { model: s.model, max_tokens: 2048, messages: [{ role: 'user', content: contextPrompt }] };
-    } else {
-      body = { model: s.model, temperature: 0.4, max_tokens: 2048, messages: [{ role: 'user', content: contextPrompt }] };
-    }
-
-    const resp = await fetch(s.endpoint, { method: 'POST', headers, body: JSON.stringify(body) });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-
-    const json = await resp.json();
-    let text = '';
-    if (json.choices?.[0]?.message?.content) text = json.choices[0].message.content;
-    else if (json.content?.[0]?.text) text = json.content[0].text;
-    else if (typeof json.message === 'string') text = json.message;
-    else if (json.message?.content) text = json.message.content;
-
+    if (s.preset === 'anthropic') { headers['x-api-key'] = s.apiKey; headers['anthropic-version'] = '2023-06-01'; delete headers['Authorization']; }
+    let body = s.preset === 'anthropic' ? { model: s.model, max_tokens: 2048, messages: [{ role: 'user', content: contextPrompt }] } : { model: s.model, temperature: 0.4, max_tokens: 2048, messages: [{ role: 'user', content: contextPrompt }] };
+    const resp = await fetch(s.endpoint, { method: 'POST', headers, body: JSON.stringify(body) }); if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const json = await resp.json(); let text = '';
+    if (json.choices?.[0]?.message?.content) text = json.choices[0].message.content; else if (json.content?.[0]?.text) text = json.content[0].text; else if (typeof json.message === 'string') text = json.message; else if (json.message?.content) text = json.message.content;
     if (!text) throw new Error('Respons kosong');
     updateChatMessage(loadingId, text);
-  } catch (err) {
-    updateChatMessage(loadingId, `Maaf, tidak bisa mendapatkan respons: ${err.message}. Pastikan pengaturan LLM sudah benar.`);
-  }
+  } catch (err) { updateChatMessage(loadingId, `Maaf, tidak bisa mendapatkan respons: ${err.message}. Pastikan pengaturan LLM sudah benar.`); }
 }
 
 function addChatMessage(role, content, isHtml = false) {
-  const container = document.getElementById('chatMessages');
-  const id = 'msg_' + Date.now();
-  const div = document.createElement('div');
-  div.id = id;
-  div.className = `${role === 'user' ? 'chat-user ml-8' : 'chat-ai mr-8'} p-3 text-sm fade-in`;
-  if (isHtml) {
-    div.innerHTML = content;
-  } else {
-    div.textContent = content;
-  }
-  container.appendChild(div);
-  container.scrollTop = container.scrollHeight;
-  return id;
+  const container = document.getElementById('chatMessages'); const id = 'msg_' + Date.now();
+  const div = document.createElement('div'); div.id = id; div.className = `${role === 'user' ? 'chat-user ml-8' : 'chat-ai mr-8'} p-3 text-sm fade-in`;
+  if (isHtml) div.innerHTML = content; else div.textContent = content;
+  container.appendChild(div); container.scrollTop = container.scrollHeight; return id;
 }
+function updateChatMessage(id, content) { const el = document.getElementById(id); if (el) { el.innerHTML = content.replace(/\n/g, '<br>'); document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight; } }
 
-function updateChatMessage(id, content) {
-  const el = document.getElementById(id);
-  if (el) {
-    el.innerHTML = content.replace(/\n/g, '<br>');
-    el.scrollTop = el.scrollHeight;
-    document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
-  }
-}
-
-// ===================== SETTINGS =====================
+// ===================== SETTINGS (SUDAH DIPERBAIKI) =====================
 function loadSettings() {
-  try {
-    const saved = localStorage.getItem('dataforge_settings');
-    if (saved) {
-      Object.assign(state.settings, JSON.parse(saved));
-    }
-  } catch {}
+  try { const saved = localStorage.getItem('dataforge_settings'); if (saved) Object.assign(state.settings, JSON.parse(saved)); } catch {}
   if (!state.settings.systemPrompt) state.settings.systemPrompt = DEFAULT_SYSTEM_PROMPT;
   populateSettingsUI();
 }
@@ -1658,18 +951,12 @@ function populateSettingsUI() {
 }
 
 function applyPreset() {
-  const preset = document.getElementById('presetSelect').value;
-  const p = PRESETS[preset];
-  if (p) {
-    document.getElementById('apiEndpoint').value = p.endpoint;
-    document.getElementById('modelName').value = p.model;
-    if (preset === 'ollama') {
-      document.getElementById('apiKey').value = 'ollama';
-    }
-  }
+  const preset = document.getElementById('presetSelect').value; const p = PRESETS[preset];
+  if (p) { document.getElementById('apiEndpoint').value = p.endpoint; document.getElementById('modelName').value = p.model; if (preset === 'ollama') document.getElementById('apiKey').value = 'ollama'; }
+  saveSettings(true); // AUTO-SAVE SAAT GANTI PRESET
 }
 
-function saveSettings() {
+function saveSettings(silent = false) {
   state.settings = {
     preset: document.getElementById('presetSelect').value,
     endpoint: document.getElementById('apiEndpoint').value.trim(),
@@ -1680,163 +967,49 @@ function saveSettings() {
     systemPrompt: document.getElementById('systemPrompt').value.trim()
   };
   localStorage.setItem('dataforge_settings', JSON.stringify(state.settings));
-  showToast('Pengaturan berhasil disimpan', 'success');
-  closeSettings();
+  if (!silent) { showToast('Pengaturan berhasil disimpan', 'success'); closeSettings(); }
 }
 
 async function testConnection() {
-  const btn = document.getElementById('btnTest');
-  btn.disabled = true;
+  saveSettings(true); // WAJIB SAVE DULU SEBELUM TEST AGAR SETTING YANG DIPAKAI BENAR
+  
+  const btn = document.getElementById('btnTest'); btn.disabled = true;
   btn.innerHTML = '<div class="spinner" style="width:16px;height:16px;border-width:2px;display:inline-block;vertical-align:middle;"></div> Testing...';
-
   try {
-    const s = {
-      preset: document.getElementById('presetSelect').value,
-      endpoint: document.getElementById('apiEndpoint').value.trim(),
-      apiKey: document.getElementById('apiKey').value.trim(),
-      model: document.getElementById('modelName').value.trim(),
-      temperature: 0.1,
-      maxTokens: 50,
-      systemPrompt: ''
-    };
-
+    const s = state.settings;
+    if (!s.endpoint) throw new Error('Endpoint kosong'); if (!s.model) throw new Error('Model kosong'); if (s.preset !== 'ollama' && !s.apiKey) throw new Error('API Key kosong');
     const headers = { 'Content-Type': 'application/json' };
     if (s.preset !== 'ollama' && s.apiKey) headers['Authorization'] = `Bearer ${s.apiKey}`;
-    if (s.preset === 'anthropic') {
-      headers['x-api-key'] = s.apiKey;
-      headers['anthropic-version'] = '2023-06-01';
-      delete headers['Authorization'];
-    }
-
-    let body;
-    if (s.preset === 'anthropic') {
-      body = { model: s.model, max_tokens: 20, messages: [{ role: 'user', content: 'Hi' }] };
-    } else {
-      body = { model: s.model, temperature: 0.1, max_tokens: 20, messages: [{ role: 'user', content: 'Hi' }] };
-    }
-
+    if (s.preset === 'anthropic') { headers['x-api-key'] = s.apiKey; headers['anthropic-version'] = '2023-06-01'; delete headers['Authorization']; }
+    let body = s.preset === 'anthropic' ? { model: s.model, max_tokens: 20, messages: [{ role: 'user', content: 'Hi' }] } : { model: s.model, temperature: 0.1, max_tokens: 20, messages: [{ role: 'user', content: 'Hi' }] };
     const resp = await fetch(s.endpoint, { method: 'POST', headers, body: JSON.stringify(body) });
-    if (resp.ok) {
-      showToast('Koneksi berhasil! LLM siap digunakan.', 'success');
-    } else {
-      const errText = await resp.text().catch(() => '');
-      showToast(`Gagal: HTTP ${resp.status} — ${errText.slice(0, 100)}`, 'error');
-    }
-  } catch (err) {
-    showToast(`Gagal: ${err.message}`, 'error');
-  }
-
-  btn.disabled = false;
-  btn.innerHTML = '<i class="fas fa-plug mr-1"></i> Test Koneksi';
+    if (resp.ok) { showToast('Koneksi berhasil! LLM siap digunakan.', 'success'); } else { const errText = await resp.text().catch(() => ''); showToast(`Gagal: HTTP ${resp.status} — ${errText.slice(0, 100)}`, 'error'); }
+  } catch (err) { showToast(`Gagal: ${err.message}`, 'error'); }
+  btn.disabled = false; btn.innerHTML = '<i class="fas fa-plug mr-1"></i> Test Koneksi';
 }
 
-function openSettings() {
-  populateSettingsUI();
-  document.getElementById('settingsModal').classList.add('open');
-}
-
-function closeSettings() {
-  document.getElementById('settingsModal').classList.remove('open');
-}
-
-function toggleKeyVisibility() {
-  const input = document.getElementById('apiKey');
-  const icon = document.getElementById('keyEyeIcon');
-  if (input.type === 'password') {
-    input.type = 'text';
-    icon.className = 'fas fa-eye-slash text-xs';
-  } else {
-    input.type = 'password';
-    icon.className = 'fas fa-eye text-xs';
-  }
-}
+function openSettings() { populateSettingsUI(); document.getElementById('settingsModal').classList.add('open'); }
+function closeSettings() { document.getElementById('settingsModal').classList.remove('open'); }
+function toggleKeyVisibility() { const input = document.getElementById('apiKey'); const icon = document.getElementById('keyEyeIcon'); if (input.type === 'password') { input.type = 'text'; icon.className = 'fas fa-eye-slash text-xs'; } else { input.type = 'password'; icon.className = 'fas fa-eye text-xs'; } }
 
 // ===================== EXPORT =====================
 function exportDashboard() {
-  // Export halaman dashboard sebagai HTML mandiri
   const dashboardHTML = document.getElementById('dashboardSection').outerHTML;
-  const html = `<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard — ${state.fileName}</title>
-<script src="https://cdn.tailwindcss.com"><\/script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"><\/script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#06090f;--bg2:#0c1220;--card:#111827;--card-hover:#1a2332;--border:#1e293b;--border-light:#2d3a4d;--fg:#e2e8f0;--fg-muted:#94a3b8;--accent:#10b981;--accent-glow:rgba(16,185,129,0.15);--accent2:#f59e0b}
-*{box-sizing:border-box}body{background:var(--bg);color:var(--fg);font-family:'Space Grotesk',sans-serif;margin:0;padding:24px}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border-light);border-radius:3px}
-.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px}
-.stat-card{background:linear-gradient(135deg,var(--card),var(--card-hover));border:1px solid var(--border);border-radius:12px;padding:20px}
-.tab-btn{padding:8px 18px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--fg-muted);font-family:inherit}
-.tab-btn.active{color:var(--accent);background:var(--accent-glow)}
-.tab-btn:hover{color:var(--fg);background:var(--card)}
-.data-table{width:100%;border-collapse:collapse;font-size:13px}
-.data-table th{background:var(--card-hover);color:var(--accent);font-weight:600;text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);font-size:12px}
-.data-table td{padding:8px 14px;border-bottom:1px solid var(--border);color:var(--fg-muted);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.chat-ai{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.03));border:1px solid rgba(16,185,129,0.15);border-radius:12px 12px 12px 4px;padding:12px;font-size:14px;margin-bottom:8px}
-.chat-user{background:var(--card-hover);border:1px solid var(--border);border-radius:12px 12px 4px 12px;padding:12px;font-size:14px;margin-bottom:8px}
-.fade-in{animation:fadeIn .5s ease forwards}
-@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.hidden{display:none!important}
-</style>
-</head>
-<body>
- ${dashboardHTML}
-<script>
-// Re-init charts dari config yang sudah ada
-const chartConfigs = ${JSON.stringify(state.chartConfigs)};
-const rawData = ${JSON.stringify(state.rawData.slice(0, 500))};
-const numericCols = ${JSON.stringify(state.numericCols)};
-const columns = ${JSON.stringify(state.columns)};
-const CHART_COLORS = ${JSON.stringify(CHART_COLORS)};
-
-function formatNumber(n){if(n===null||n===undefined)return'0';if(Math.abs(n)>=1e9)return(n/1e9).toFixed(1)+'B';if(Math.abs(n)>=1e6)return(n/1e6).toFixed(1)+'M';if(Math.abs(n)>=1e3)return(n/1e3).toFixed(1)+'K';return typeof n==='number'?n.toLocaleString('id-ID'):n}
-function calcAgg(rows,col,agg){const vals=rows.map(r=>parseFloat(r[col])).filter(v=>!isNaN(v));if(!vals.length)return 0;switch(agg){case'avg':return Math.round(vals.reduce((a,b)=>a+b,0)/vals.length*100)/100;case'count':return rows.length;case'max':return Math.max(...vals);case'min':return Math.min(...vals);default:return Math.round(vals.reduce((a,b)=>a+b,0)*100)/100}}
-function aggregateData(cfg){const{xAxis,yAxis,aggregation,sort,topN}=cfg;const isScatter=cfg.type==='scatter';if(isScatter){const points=rawData.map(r=>({x:parseFloat(r[xAxis]),y:parseFloat(r[yAxis?.[0]])})).filter(p=>!isNaN(p.x)&&!isNaN(p.y));return{labels:[],values:[[]],scatterData:points}}const groups={};rawData.forEach(row=>{const key=String(row[xAxis]||'(kosong)');if(!groups[key])groups[key]=[];groups[key].push(row)});let labels=Object.keys(groups);if(sort==='asc'||sort==='desc'){labels.sort((a,b)=>{let va=0,vb=0;if(yAxis&&yAxis.length>0){va=calcAgg(groups[a],yAxis[0],aggregation);vb=calcAgg(groups[b],yAxis[0],aggregation)}else{va=groups[a].length;vb=groups[b].length}return sort==='asc'?va-vb:vb-va})}if(topN&&labels.length>topN)labels=labels.slice(0,topN);const values=(yAxis||[]).map(yCol=>labels.map(label=>calcAgg(groups[label],yCol,aggregation||'sum')));if(!yAxis||yAxis.length===0)values.push(labels.map(label=>groups[label].length));return{labels,values}}
-
-function getTooltipConfig(){return{backgroundColor:'rgba(17,24,39,0.95)',titleColor:'#e2e8f0',bodyColor:'#94a3b8',borderColor:'#1e293b',borderWidth:1,cornerRadius:8,padding:12,titleFont:{family:'Space Grotesk',weight:'600'},bodyFont:{family:'Space Grotesk'}}}
-
-function buildChart(canvas,cfg){const ctx=canvas.getContext('2d');const data=aggregateData(cfg);const isPie=['pie','doughnut','polarArea'].includes(cfg.type);const isRadar=cfg.type==='radar';let chartData,options;
-if(isPie){chartData={labels:data.labels,datasets:[{data:data.values[0]||[],backgroundColor:cfg.colors.slice(0,data.labels.length),borderColor:'rgba(6,9,15,0.8)',borderWidth:2,hoverOffset:8}]};options={responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#94a3b8',font:{family:'Space Grotesk',size:11},padding:12,usePointStyle:true,pointStyleWidth:8}},tooltip:getTooltipConfig()}};if(cfg.type==='doughnut')options.cutout='55%'}
-else if(cfg.type==='scatter'){chartData={datasets:[{label:cfg.yAxis[0]||'Value',data:data.scatterData||[],backgroundColor:cfg.colors[0]+'99',borderColor:cfg.colors[0],borderWidth:1,pointRadius:5,pointHoverRadius:8}]};options={responsive:true,maintainAspectRatio:false,scales:{x:{grid:{color:'#1e293b22'},ticks:{color:'#64748b',font:{family:'Space Grotesk',size:11}},border:{display:false}},y:{grid:{color:'#1e293b44'},ticks:{color:'#64748b',font:{family:'Space Grotesk',size:11}},border:{display:false},beginAtZero:true}},plugins:{tooltip:getTooltipConfig()}}}
-else if(isRadar){chartData={labels:data.labels,datasets:(data.values[0]||[]).map((_,di)=>({label:cfg.yAxis[di]||'Series '+(di+1),data:data.values[di]||[],borderColor:cfg.colors[di%cfg.colors.length],backgroundColor:cfg.colors[di%cfg.colors.length]+'22',borderWidth:2,pointBackgroundColor:cfg.colors[di%cfg.colors.length],pointRadius:4}))};options={responsive:true,maintainAspectRatio:false,scales:{r:{angleLines:{color:'#1e293b'},grid:{color:'#1e293b'},pointLabels:{color:'#94a3b8',font:{family:'Space Grotesk',size:11}},ticks:{color:'#64748b',backdropColor:'transparent',font:{size:10}}}},plugins:{legend:{labels:{color:'#94a3b8',font:{family:'Space Grotesk',size:11},usePointStyle:true}},tooltip:getTooltipConfig()}}}
-else{const datasets=(cfg.yAxis||[]).map((yCol,di)=>{const base={label:yCol,data:data.values[di]||[],borderWidth:2};if(cfg.type==='line'){base.borderColor=cfg.colors[di%cfg.colors.length];base.backgroundColor=cfg.colors[di%cfg.colors.length]+'15';base.fill=true;base.tension=0.4;base.pointRadius=4;base.pointHoverRadius=7;base.pointBackgroundColor=cfg.colors[di%cfg.colors.length]}else{base.backgroundColor=cfg.colors[di%cfg.colors.length]+'cc';base.borderColor=cfg.colors[di%cfg.colors.length];base.borderRadius=6;base.borderSkipped=false}return base});chartData={labels:data.labels,datasets};options={responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},scales:{x:{grid:{color:'#1e293b22'},ticks:{color:'#64748b',font:{family:'Space Grotesk',size:11},maxRotation:45},border:{display:false}},y:{grid:{color:'#1e293b44'},ticks:{color:'#64748b',font:{family:'Space Grotesk',size:11},callback:function(v){return formatNumber(v)}},border:{display:false},beginAtZero:true}},plugins:{legend:{display:(cfg.yAxis||[]).length>1,labels:{color:'#94a3b8',font:{family:'Space Grotesk',size:11},usePointStyle:true,pointStyleWidth:8,padding:16}},tooltip:getTooltipConfig()}}}
-return new Chart(ctx,{type:cfg.type==='scatter'?'scatter':cfg.type,data:chartData,options})}
-
-// Rebuild semua chart
-chartConfigs.forEach((cfg,i)=>{const canvas=document.getElementById('chart_'+i);if(canvas)buildChart(canvas,cfg)});
-<\/script>
-</body>
-</html>`;
-
-  const blob = new Blob([html], { type: 'text/html' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `dashboard_${state.fileName.replace(/\.[^.]+$/, '')}.html`;
-  a.click();
-  URL.revokeObjectURL(url);
+  const html = `<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dashboard — ${state.fileName}</title><script src="https://cdn.tailwindcss.com"><\/script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"><\/script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>:root{--bg:#06090f;--card:#111827;--card-hover:#1a2332;--border:#1e293b;--fg:#e2e8f0;--fg-muted:#94a3b8;--accent:#10b981;--accent-glow:rgba(16,185,129,0.15)}*{box-sizing:border-box}body{background:var(--bg);color:var(--fg);font-family:'Space Grotesk',sans-serif;margin:0;padding:24px}.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px}.stat-card{background:linear-gradient(135deg,var(--card),var(--card-hover));border:1px solid var(--border);border-radius:12px;padding:20px}.tab-btn{padding:8px 18px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--fg-muted);font-family:inherit}.tab-btn.active{color:var(--accent);background:var(--accent-glow)}.data-table{width:100%;border-collapse:collapse;font-size:13px}.data-table th{background:var(--card-hover);color:var(--accent);font-weight:600;text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);font-size:12px}.data-table td{padding:8px 14px;border-bottom:1px solid var(--border);color:var(--fg-muted);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chat-ai{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.03));border:1px solid rgba(16,185,129,0.15);border-radius:12px 12px 12px 4px;padding:12px;font-size:14px;margin-bottom:8px}.chat-user{background:var(--card-hover);border:1px solid var(--border);border-radius:12px 12px 4px 12px;padding:12px;font-size:14px;margin-bottom:8px}.fade-in{animation:fadeIn .5s ease forwards}@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.hidden{display:none!important}</style></head><body>${dashboardHTML}<script>const chartConfigs=${JSON.stringify(state.chartConfigs)};const rawData=${JSON.stringify(state.rawData.slice(0, 500))};const numericCols=${JSON.stringify(state.numericCols)};const columns=${JSON.stringify(state.columns)};const CHART_COLORS=${JSON.stringify(CHART_COLORS)};function formatNumber(n){if(n===null||n===undefined)return'0';if(Math.abs(n)>=1e9)return(n/1e9).toFixed(1)+'B';if(Math.abs(n)>=1e6)return(n/1e6).toFixed(1)+'M';if(Math.abs(n)>=1e3)return(n/1e3).toFixed(1)+'K';return typeof n==='number'?n.toLocaleString('id-ID'):n}function calcAgg(r,c,a){const v=r.map(x=>parseFloat(x[c])).filter(x=>!isNaN(x));if(!v.length)return 0;switch(a){case'avg':return Math.round(v.reduce((s,x)=>s+x,0)/v.length*100)/100;case'count':return r.length;case'max':return Math.max(...v);case'min':return Math.min(...v);default:return Math.round(v.reduce((s,x)=>s+x,0)*100)/100}}function aggregateData(c){const{xAxis:x,yAxis:y,aggregation:a,sort:s,topN:t}=c;if(c.type==='scatter'){return{labels:[],values:[[]],scatterData:rawData.map(r=>({x:parseFloat(r[x]),y:parseFloat(r[y?.[0]])})).filter(p=>!isNaN(p.x)&&!isNaN(p.y))}}const g={};rawData.forEach(r=>{const k=String(r[x]||'(kosong)');if(!g[k])g[k]=[];g[k].push(r)});let l=Object.keys(g);if(s==='asc'||s==='desc'){l.sort((a,b)=>{let va=0,vb=0;if(y&&y.length>0){va=calcAgg(g[a],y[0],a);vb=calcAgg(g[b],y[0],a)}else{va=g[a].length;vb=g[b].length}return s==='asc'?va-vb:vb-va})}if(t&&l.length>t)l=l.slice(0,t);const v=(y||[]).map(yC=>l.map(lb=>calcAgg(g[lb],yC,a||'sum')));if(!y||y.length===0)v.push(l.map(lb=>g[lb].length));return{labels:l,values:v}}function getTooltipConfig(){return{backgroundColor:'rgba(17,24,39,0.95)',titleColor:'#e2e8f0',bodyColor:'#94a3b8',borderColor:'#1e293b',borderWidth:1,cornerRadius:8,padding:12,titleFont:{family:'Space Grotesk',weight:'600'},bodyFont:{family:'Space Grotesk'},callbacks:{label:c=>` ${c.dataset.label||''}: ${formatNumber(c.parsed.y??c.parsed)}`}}}function buildChart(cv,cfg){const ctx=cv.getContext('2d');const d=aggregateData(cfg);const isPie=['pie','doughnut','polarArea'].includes(cfg.type);let cd,o;if(isPie){cd={labels:d.labels,datasets:[{data:d.values[0]||[],backgroundColor:cfg.colors.slice(0,d.labels.length),borderColor:'rgba(6,9,15,0.8)',borderWidth:2,hoverOffset:8}]};o={responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#94a3b8',font:{family:'Space Grotesk',size:11},padding:12,usePointStyle:true,pointStyleWidth:8}},tooltip:getTooltipConfig()}};if(cfg.type==='doughnut')o.cutout='55%'}else if(cfg.type==='scatter'){cd={datasets:[{label:cfg.yAxis[0]||'Value',data:d.scatterData||[],backgroundColor:cfg.colors[0]+'99',borderColor:cfg.colors[0],borderWidth:1,pointRadius:5,pointHoverRadius:8}]};o={responsive:true,maintainAspectRatio:false,scales:{x:{grid:{color:'#1e293b22'},ticks:{color:'#64748b'},border:{display:false}},y:{grid:{color:'#1e293b44'},ticks:{color:'#64748b'},border:{display:false},beginAtZero:true}},plugins:{tooltip:getTooltipConfig()}}}else{const ds=(cfg.yAxis||[]).map((yC,i)=>{const b={label:yC,data:d.values[i]||[],borderWidth:2};if(cfg.type==='line'){b.borderColor=cfg.colors[i%cfg.colors.length];b.backgroundColor=cfg.colors[i%cfg.colors.length]+'15';b.fill=true;b.tension=0.4;b.pointRadius=4;b.pointHoverRadius=7;b.pointBackgroundColor=cfg.colors[i%cfg.colors.length]}else{b.backgroundColor=cfg.colors[i%cfg.colors.length]+'cc';b.borderColor=cfg.colors[i%cfg.colors.length];b.borderRadius=6;b.borderSkipped=false}return b});cd={labels:d.labels,datasets:ds};o={responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},scales:{x:{grid:{color:'#1e293b22'},ticks:{color:'#64748b',font:{family:'Space Grotesk',size:11},maxRotation:45},border:{display:false}},y:{grid:{color:'#1e293b44'},ticks:{color:'#64748b',font:{family:'Space Grotesk',size:11},callback:v=>formatNumber(v)},border:{display:false},beginAtZero:true}},plugins:{legend:{display:(cfg.yAxis||[]).length>1,labels:{color:'#94a3b8',font:{family:'Space Grotesk',size:11},usePointStyle:true,pointStyleWidth:8,padding:16}},tooltip:getTooltipConfig()}}}return new Chart(ctx,{type:cfg.type==='scatter'?'scatter':cfg.type,data:cd,options:o})}chartConfigs.forEach((c,i)=>{const cv=document.getElementById('chart_'+i);if(cv)buildChart(cv,c)});<\/script></body></html>`;
+  const blob = new Blob([html], { type: 'text/html' }); const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = `dashboard_${state.fileName.replace(/\.[^.]+$/, '')}.html`; a.click(); URL.revokeObjectURL(url);
   showToast('Dashboard berhasil di-export sebagai HTML', 'success');
 }
 
-// ===================== TABS =====================
+// ===================== TABS & UI =====================
 function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
   document.getElementById('tabDashboard').classList.toggle('hidden', tab !== 'dashboard');
   document.getElementById('tabData').classList.toggle('hidden', tab !== 'data');
   document.getElementById('tabChat').classList.toggle('hidden', tab !== 'chat');
-
-  // Resize chart saat kembali ke dashboard
-  if (tab === 'dashboard') {
-    setTimeout(() => state.charts.forEach(c => c.resize()), 50);
-  }
+  if (tab === 'dashboard') setTimeout(() => state.charts.forEach(c => c.resize()), 50);
 }
 
-// ===================== UI HELPERS =====================
 function showSection(section) {
   document.getElementById('uploadSection').classList.toggle('hidden', section !== 'upload');
   document.getElementById('loadingSection').classList.toggle('hidden', section !== 'loading');
@@ -1850,45 +1023,21 @@ function updateLoading(pct, title, subtitle) {
 }
 
 function resetApp() {
-  state.charts.forEach(c => c.destroy());
-  state.charts = [];
-  state.chartConfigs = [];
-  state.rawData = [];
-  state.columns = [];
-  state.numericCols = [];
-  state.categoryCols = [];
-  state.fallbackUsed = false;
-  document.getElementById('btnExport').style.display = 'none';
-  document.getElementById('aiInsight').classList.add('hidden');
+  state.charts.forEach(c => c.destroy()); state.charts = []; state.chartConfigs = []; state.rawData = []; state.columns = []; state.numericCols = []; state.categoryCols = []; state.fallbackUsed = false;
+  document.getElementById('btnExport').style.display = 'none'; document.getElementById('aiInsight').classList.add('hidden');
   showSection('upload');
 }
 
 function showToast(msg, type = 'info') {
-  const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.className = `toast ${type}`;
-  requestAnimationFrame(() => el.classList.add('show'));
-  setTimeout(() => el.classList.remove('show'), 3500);
+  const el = document.getElementById('toast'); el.textContent = msg; el.className = `toast ${type}`;
+  requestAnimationFrame(() => el.classList.add('show')); setTimeout(() => el.classList.remove('show'), 3500);
 }
 
-function formatNumber(n) {
-  if (n === null || n === undefined) return '0';
-  if (typeof n !== 'number') return n;
-  if (Math.abs(n) >= 1e9) return (n / 1e9).toFixed(1) + 'B';
-  if (Math.abs(n) >= 1e6) return (n / 1e6).toFixed(1) + 'M';
-  if (Math.abs(n) >= 1e3) return (n / 1e3).toFixed(1) + 'K';
-  return n.toLocaleString('id-ID');
-}
-
+function formatNumber(n) { if (n === null || n === undefined) return '0'; if (typeof n !== 'number') return n; if (Math.abs(n) >= 1e9) return (n / 1e9).toFixed(1) + 'B'; if (Math.abs(n) >= 1e6) return (n / 1e6).toFixed(1) + 'M'; if (Math.abs(n) >= 1e3) return (n / 1e3).toFixed(1) + 'K'; return n.toLocaleString('id-ID'); }
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-// Tutup modal dengan klik overlay atau Escape
-document.getElementById('settingsModal').addEventListener('click', e => {
-  if (e.target === e.currentTarget) closeSettings();
-});
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeSettings();
-});
+document.getElementById('settingsModal').addEventListener('click', e => { if (e.target === e.currentTarget) closeSettings(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSettings(); });
 </script>
 </body>
 </html>
