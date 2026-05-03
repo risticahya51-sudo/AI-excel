@@ -370,6 +370,47 @@ tailwind.config = {
 
 <!-- Main Content -->
 <main class="relative z-10 pt-14">
+  <!-- Dashboard Input Barang -->
+  <section id="inventoryInputSection" class="max-w-[1400px] mx-auto px-6 py-10">
+    <div class="chart-card">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight">Dashboard Input Barang</h2>
+          <p class="text-sm mt-1" style="color:var(--fg-muted)">Input data: tanggal, tujuan, stok awal, ukuran, jumlah, kubikasi, nominal, stok akhir.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div><label class="block text-xs mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Tanggal</label><input id="invTanggal" type="date" class="input-field"></div>
+        <div><label class="block text-xs mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Tujuan</label><input id="invTujuan" type="text" class="input-field" placeholder="Contoh: Surabaya"></div>
+        <div><label class="block text-xs mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Stok Awal</label><input id="invStokAwal" type="number" min="0" class="input-field" placeholder="0"></div>
+        <div><label class="block text-xs mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Ukuran (m³/unit)</label><input id="invUkuran" type="number" min="0" step="0.001" class="input-field" placeholder="0.000"></div>
+        <div><label class="block text-xs mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Jumlah</label><input id="invJumlah" type="number" min="0" class="input-field" placeholder="0"></div>
+        <div><label class="block text-xs mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Kubikasi (otomatis)</label><input id="invKubikasi" type="number" min="0" step="0.001" class="input-field" placeholder="0.000" readonly></div>
+        <div><label class="block text-xs mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Nominal (Rp)</label><input id="invNominal" type="number" min="0" class="input-field" placeholder="0"></div>
+        <div><label class="block text-xs mb-1.5 uppercase tracking-wide" style="color:var(--fg-muted)">Stok Akhir (otomatis)</label><input id="invStokAkhir" type="number" min="0" class="input-field" placeholder="0" readonly></div>
+      </div>
+
+      <div class="mt-5 flex flex-wrap gap-3">
+        <button onclick="addInventoryItem()" class="btn-primary"><i class="fas fa-plus mr-1.5"></i>Tambah Data</button>
+        <button onclick="resetInventoryForm()" class="btn-ghost"><i class="fas fa-eraser mr-1.5"></i>Reset Form</button>
+      </div>
+
+      <div class="mt-6 overflow-auto rounded-lg" style="border:1px solid var(--border)">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Tanggal</th><th>Tujuan</th><th>Stok Awal</th><th>Ukuran</th><th>Jumlah</th><th>Kubikasi</th><th>Nominal</th><th>Stok Akhir</th>
+            </tr>
+          </thead>
+          <tbody id="inventoryTableBody">
+            <tr><td colspan="8" class="text-center py-6" style="color:var(--fg-muted)">Belum ada data barang.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <!-- Upload Section -->
   <section id="uploadSection" class="max-w-3xl mx-auto px-6 py-20">
     <div class="text-center mb-10 fade-in">
@@ -696,6 +737,9 @@ document.addEventListener('DOMContentLoaded', () => {
   loadSettings();
   setupUploadZone();
   createParticles();
+  ['invStokAwal', 'invUkuran', 'invJumlah'].forEach(id => {
+    document.getElementById(id)?.addEventListener('input', recalcInventory);
+  });
 });
 
 function createParticles() {
@@ -751,6 +795,68 @@ function setupUploadZone() {
     zone.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
     zone.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
   });
+}
+
+const inventoryItems = [];
+
+function recalcInventory() {
+  const stokAwal = Number(document.getElementById('invStokAwal').value || 0);
+  const ukuran = Number(document.getElementById('invUkuran').value || 0);
+  const jumlah = Number(document.getElementById('invJumlah').value || 0);
+  document.getElementById('invKubikasi').value = (ukuran * jumlah).toFixed(3);
+  document.getElementById('invStokAkhir').value = Math.max(stokAwal - jumlah, 0);
+}
+
+function renderInventoryTable() {
+  const tbody = document.getElementById('inventoryTableBody');
+  if (!inventoryItems.length) {
+    tbody.innerHTML = `<tr><td colspan="8" class="text-center py-6" style="color:var(--fg-muted)">Belum ada data barang.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = inventoryItems.map(item => `
+    <tr>
+      <td>${item.tanggal || '-'}</td>
+      <td>${item.tujuan || '-'}</td>
+      <td>${formatNumber(item.stokAwal)}</td>
+      <td>${Number(item.ukuran).toFixed(3)}</td>
+      <td>${formatNumber(item.jumlah)}</td>
+      <td>${Number(item.kubikasi).toFixed(3)}</td>
+      <td>Rp ${formatNumber(item.nominal)}</td>
+      <td>${formatNumber(item.stokAkhir)}</td>
+    </tr>
+  `).join('');
+}
+
+function addInventoryItem() {
+  const data = {
+    tanggal: document.getElementById('invTanggal').value,
+    tujuan: document.getElementById('invTujuan').value.trim(),
+    stokAwal: Number(document.getElementById('invStokAwal').value || 0),
+    ukuran: Number(document.getElementById('invUkuran').value || 0),
+    jumlah: Number(document.getElementById('invJumlah').value || 0),
+    kubikasi: Number(document.getElementById('invKubikasi').value || 0),
+    nominal: Number(document.getElementById('invNominal').value || 0),
+    stokAkhir: Number(document.getElementById('invStokAkhir').value || 0)
+  };
+
+  if (!data.tanggal || !data.tujuan) {
+    showToast('Tanggal dan tujuan wajib diisi.', 'error');
+    return;
+  }
+
+  inventoryItems.unshift(data);
+  renderInventoryTable();
+  resetInventoryForm();
+  showToast('Data barang berhasil ditambahkan.', 'success');
+}
+
+function resetInventoryForm() {
+  ['invTanggal', 'invTujuan', 'invStokAwal', 'invUkuran', 'invJumlah', 'invNominal'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('invKubikasi').value = '';
+  document.getElementById('invStokAkhir').value = '';
 }
 
 function handleFile(file) {
